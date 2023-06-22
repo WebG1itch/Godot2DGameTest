@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://cmieyg6sbwus1"]
+
+[ext_resource type="Script" path="res://SceneHandler.gd" id="1_41qcj"]
+[ext_resource type="PackedScene" uid="uid://cu56fqruoj3kr" path="res://Scenes/UI/mainMenu.tscn" id="2_hlrji"]
+[ext_resource type="AudioStream" uid="uid://tpmeip120nrs" path="res://Assets/Audio/Ludum Dare 30 - Track 8.wav" id="3_bex0k"]
+
+[node name="SceneHandler" type="Node"]
+script = ExtResource("1_41qcj")
+
+[node name="MainMenu" parent="." instance=ExtResource("2_hlrji")]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_bex0k")
+volume_db = -10.0

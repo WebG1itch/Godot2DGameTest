@@ -1,0 +1,115 @@
+[gd_scene load_steps=5 format=3 uid="uid://cu56fqruoj3kr"]
+
+[ext_resource type="Texture2D" uid="uid://c6ynd1bmvhwwu" path="res://Assets/UI/Art/BackGround.png" id="1_wjpi3"]
+[ext_resource type="Texture2D" uid="uid://4qu20akm4h83" path="res://Assets/UI/Buttons/blue_button03.png" id="2_mwhfw"]
+[ext_resource type="Texture2D" uid="uid://ca0xcmicu70ps" path="res://Assets/UI/Buttons/blue_button05.png" id="3_trwpg"]
+[ext_resource type="FontFile" uid="uid://dh6cgsomie5oc" path="res://Assets/Fonts/Kenney Future Narrow.ttf" id="4_6pd12"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 2.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_wjpi3")
+expand_mode = 2
+
+[node name="Victory" type="Label" parent="Background"]
+layout_mode = 0
+offset_left = 161.0
+offset_top = 305.0
+offset_right = 575.0
+offset_bottom = 410.0
+theme_override_font_sizes/font_size = 70
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="Background"]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 693.0
+offset_right = 273.0
+offset_bottom = 719.0
+text = "Music from abstractionmusic.com"
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_constants/separation = 35
+alignment = 1
+
+[node name="NewGame" type="TextureButton" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(350, 75)
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = ExtResource("2_mwhfw")
+texture_pressed = ExtResource("3_trwpg")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/NewGame"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0.686275)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("4_6pd12")
+theme_override_font_sizes/font_size = 40
+text = "New Game
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Control" type="Control" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+
+[node name="Quit" type="TextureButton" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(350, 75)
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = ExtResource("2_mwhfw")
+texture_pressed = ExtResource("3_trwpg")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/Quit"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0.686275)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("4_6pd12")
+theme_override_font_sizes/font_size = 40
+text = "Quit
+"
+horizontal_alignment = 1
+vertical_alignment = 1

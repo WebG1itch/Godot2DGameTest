@@ -1,0 +1,37 @@
+[gd_scene load_steps=7 format=3 uid="uid://bsqewymottd1"]
+
+[ext_resource type="Script" path="res://Scenes/Towers/MissileT1.gd" id="1_pkvlf"]
+[ext_resource type="Texture2D" uid="uid://bpgy1ob1kfyiq" path="res://Assets/Towers/towerDefense_tile180.png" id="1_vj6ag"]
+[ext_resource type="Texture2D" uid="uid://0vwu7se48khy" path="res://Assets/Towers/towerDefense_tile228.png" id="2_n6887"]
+[ext_resource type="Texture2D" uid="uid://c12pnwudr78p" path="res://Assets/Towers/towerDefense_tile251.png" id="3_sfveg"]
+[ext_resource type="AudioStream" uid="uid://d2mdsjk64c1un" path="res://Assets/Audio/Shoot.mp3" id="5_wofd2"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gjdqq"]
+
+[node name="MissileT1" type="Node2D"]
+script = ExtResource("1_pkvlf")
+
+[node name="Base" type="Sprite2D" parent="."]
+texture = ExtResource("1_vj6ag")
+
+[node name="Turret" type="Sprite2D" parent="."]
+texture = ExtResource("2_n6887")
+
+[node name="Missile1" type="Sprite2D" parent="Turret"]
+texture = ExtResource("3_sfveg")
+offset = Vector2(5, 10)
+
+[node name="Missile2" type="Sprite2D" parent="Turret"]
+texture = ExtResource("3_sfveg")
+offset = Vector2(5, -10)
+
+[node name="Range" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Range"]
+shape = SubResource("CircleShape2D_gjdqq")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_wofd2")
+
+[connection signal="body_entered" from="Range" to="." method="_on_range_body_entered"]
+[connection signal="body_exited" from="Range" to="." method="_on_range_body_exited"]
